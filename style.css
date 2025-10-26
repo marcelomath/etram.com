@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🎨 Paleta */
+:root {
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --accent: #00ffff;
+  --subtext: #cccccc;
+  --card-bg: rgba(255,255,255,0.05);
+}
+
+[data-theme="light"] {
+  --bg: #f2f2f2;
+  --text: #111111;
+  --accent: #0066ff;
+  --subtext: #555555;
+  --card-bg: rgba(0,0,0,0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* 🔝 Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+[data-theme="light"] header {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.logo img {
+  height: 45px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* 🌍 Hero */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #001f2d, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.hero h2 {
+  font-size: 2.4em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: var(--subtext);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #00cccc;
+  transform: scale(1.05);
+}
+
+/* 📖 Seções */
+section {
+  padding: 100px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.about, .contact {
+  background-color: #0d0d0d;
+}
+
+[data-theme="light"] .about,
+[data-theme="light"] .contact {
+  background-color: #f9f9f9;
+}
+
+.section-img img {
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+.section-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.projects {
+  background-color: #001f2d;
+  text-align: center;
+}
+
+[data-theme="light"] .projects {
+  background-color: #d9e6ff;
+}
+
+/* 💼 Projetos */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card h4 {
+  margin: 15px 0 10px;
+}
+
+/* 📞 Contato */
+.contact {
+  text-align: center;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px;
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.contact-links a:hover {
+  color: #00cccc;
+}
+
+/* 👣 Footer */
+footer {
+  background-color: #000;
+  color: #888;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+}
+
+/* ⬆️ Botão topo */
+#scrollTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--accent);
+  border: none;
+  color: var(--bg);
+  font-size: 1.5em;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+#scrollTop:hover {
+  transform: scale(1.1);
+}
+
+/* ✨ Animação */
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h2 {
+    font-size: 1.8em;
+  }
+  section {
+    flex-direction: column;
+  }
+}
